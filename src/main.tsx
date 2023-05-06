@@ -9,9 +9,9 @@ import { questionsApiSlice } from './store/api/questionsApiSlice.ts'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+  <ApiProvider api={questionsApiSlice}>
   <React.StrictMode>
-    <ApiProvider api={questionsApiSlice}>
       <App />
-    </ApiProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
+  </ApiProvider>
 )
