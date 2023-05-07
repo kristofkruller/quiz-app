@@ -8,10 +8,14 @@ import { questionsApiSlice } from './store/api/questionsApiSlice.ts'
 
 import './index.css'
 
+import { BrowserRouter } from 'react-router-dom'
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <ApiProvider api={questionsApiSlice}>
   <React.StrictMode>
-      <App />
+    <BrowserRouter>
+      <ApiProvider api={questionsApiSlice}>
+          <App />
+      </ApiProvider>
+    </BrowserRouter>
   </React.StrictMode>
-  </ApiProvider>
 )

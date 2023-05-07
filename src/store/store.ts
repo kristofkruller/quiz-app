@@ -6,6 +6,6 @@ export const store = configureStore({
   reducer: {
     [questionsApiSlice.reducerPath]: questionsApiSlice.reducer
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(questionsApiSlice.middleware)
+  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(questionsApiSlice.middleware),
 });
 setupListeners(store.dispatch);

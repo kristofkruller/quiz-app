@@ -1,22 +1,16 @@
-import React, { useEffect } from 'react'
+import { useParams } from "react-router-dom"
+
 import { QuestionResult } from "../../app"
 import { useGetQuestionsQuery } from '../store/api/questionsApiSlice'
 
-const Card = () => {
+const QuestionCard = () => {
 
-  useEffect(() => {
-    async function fetchIt() {
-      const res = await fetch("https://opentdb.com/api.php?amount=10&difficulty=hard&type=boolean")
-      const data = await res.json()
-      
-      console.log(data)
-    
-    }
-    fetchIt()
-  }, [])
-  
+  //ROUTER
+  const { id }  = useParams();
+
+  // QUERY
   const {
-    data,
+    data: questions = [],
     isLoading,
     isSuccess,
     error,
@@ -31,9 +25,13 @@ const Card = () => {
         </div>
       </div>
     )
-  } else if (isSuccess) {
+  } else if (isSuccess && questions.length > 0 && questions) {
+    questions && console.log(questions)
+    const question: QuestionResult = questions[id]
     cardContent = (
-      <div>{data.map((e) => (<div>{e}</div>))}</div>
+      // <div>{questions && questions.map((e: QuestionResult) => (<div>{e.category}</div>))}</div>
+      <div>{questions && question.category}</div>
+
     )
   } else if (error) {
     if ('status' in error) {
@@ -59,4 +57,4 @@ const Card = () => {
   )
 }
 
-export default Card
+export default QuestionCard
