@@ -1,12 +1,15 @@
 import { Routes, Route } from "react-router-dom"
 
-import './App.css'
-import QuestionCard from './components/QuestionCard'
+import Question from './routes/Question'
+import Welcome from "./routes/Welcome"
+import Result from "./routes/Result"
 
 function App() {
   return (
     <Routes>
-      <Route path="/question/:idx" element={<QuestionCard />} />
+      <Route path="/" element={<Welcome />} />
+      <Route path="/question/" element={<Question />} />
+      <Route path="/result/" element={<Result />} />
     </Routes>
   )
 }

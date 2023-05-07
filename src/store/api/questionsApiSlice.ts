@@ -10,11 +10,9 @@ export const questionsApiSlice = createApi({
   tagTypes: ["Question"],
   endpoints: builder => ({
     //GET(query)
-    getQuestions: builder.query<QuestionResult | any, void>({
+    getQuestions: builder.query<QuestionResult[], void>({
       query: () => "/api.php?amount=10&difficulty=hard&type=boolean",
-      transformResponse: (response: Questions) => {
-        return response.results;
-      }
+      transformResponse: (response: Questions) => response.results
     })
   })
 })
