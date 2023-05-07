@@ -6,7 +6,7 @@ import QuestionCard from './components/QuestionCard'
 function App() {
   return (
     <Routes>
-      <Route path="/question/:id" element={<QuestionCard />} />
+      <Route path="/question/:idx" element={<QuestionCard />} />
     </Routes>
   )
 }
