@@ -28,9 +28,6 @@ const Question = () => {
     console.log(currentIdx)
     return prevIndex < 9 ? prevIndex + 1 : 9
   })
-  const handlePrevQuestion = () => setCurrentIdx((prevIndex: number): number => {
-    return prevIndex > 0 ? prevIndex - 1 : 0
-  })
 
   //COMPONENT LOGIC
   if (isLoading) cardContent = <Loading />
@@ -55,7 +52,13 @@ const Question = () => {
   
   if (isSuccess && questions.length > 0 && questions) {
     cardContent = (
-      <QuestionCard qData={currentQuestion} />
+      <QuestionCard qData={currentQuestion}>
+        <div id="cta">
+          <button>True</button>
+          <span className="inline-block h-1 w-10 text-zinc-900 dark:text-fuchsia-800">or</span>
+          <button>False</button>
+        </div>
+      </QuestionCard>
     )
   } 
 
