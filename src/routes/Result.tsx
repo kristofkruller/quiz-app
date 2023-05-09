@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import ActionBtn from "../components/buttons/ActionBtn";
 import { clearIndex } from "../store/slices/indexSlice";
+import PlayBtn from "../components/buttons/PlayBtn";
 
 const Result = () => {
   const dispatch = useDispatch()
@@ -23,7 +24,7 @@ const Result = () => {
       <h2>Result</h2>
       <p>Score: {}/{}</p>
       <div>{}</div>
-      <ActionBtn content="Play Again" onClick={() => handlePlayAgain()} />
+      <PlayBtn content="Play Again" onClick={() => handlePlayAgain()} />
     </section>
   );
 };

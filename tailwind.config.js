@@ -11,7 +11,8 @@ export default {
       animation: {
         type: 'type 2.7s ease-out .8s infinite alternate both',
         cursor: 'cursor .6s linear infinite alternate',
-        shade: 'shade 20s ease-in-out infinite alternate'
+        shade: 'shade 20s ease-in-out infinite alternate',
+        actionAnimTr: 'actionAnimTr 0.3s forwards'
       },
       keyframes: {
         type: {
@@ -39,7 +40,12 @@ export default {
           "40%" : { opacity: .7 },
           "60%" : { opacity: .45 },
           "100%" : { opacity: .65 }
-        }       
+        },
+        actionAnimTr: {
+          "60%" : { transform: "scale3d(0.8, 0.8, 1)" },
+          "85%" : { transform: "scale3d(1.1, 1.1, 1)" },
+          "100%" : { transform: "scale3d(1, 1, 1)" }
+        },
       },
     },
   },

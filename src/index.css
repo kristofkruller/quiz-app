@@ -72,15 +72,47 @@ body.dark {
 	}
 }
 
+/* actionBtn */
+.actionBtn {
+	-webkit-transition: background-color 0.3s, color 0.3s;
+	transition: background-color 0.3s, color 0.3s;
+}
+.actionBtn::before {
+	content: '';
+	position: absolute;
+	top: -25px;
+	left: -15px;
+	bottom: -25px;
+	right: -15px;
+	background: inherit;
+	border-radius: 10%;
+	z-index: -1;
+	opacity: 0.4;
+
+	-webkit-transform: scale3d(0.8, 0.5, 1);
+	transform: scale3d(0.8, 0.5, 1);
+}
+.actionBtn:hover {
+  -webkit-transition: background-color 0.1s 0.3s, color 0.1s 0.3s;
+	transition: background-color 0.1s 0.3s, color 0.1s 0.3s;
+}
+.actionBtn:hover::before {
+  -webkit-animation: actionAnimOp 0.3s 0.3s forwards;
+	animation: actionAnimOp 0.3s 0.3s forwards;
+}
+@keyframes actionAnimOp {
+	to {
+		opacity: 0;
+		-webkit-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
+	}
+}
 /* TAILWIND */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
-  .btn-wlc{
-    @apply relative flex flex-row items-center justify-center gap-x-1 hover:gap-x-3 py-2.5 px-6 rounded-[6.25rem] shadow-sm hover:shadow-md font-medium bg-slate-900/70 hover:bg-slate-900/50 text-purple-400 hover:text-gray-300 uppercase dark:bg-pink-200/10 dark:hover:bg-pink-200/20 dark:text-gray-200
-  }
   .icon-basic {
     @apply w-10 h-10 fill-slate-600 dark:fill-purple-500
   }

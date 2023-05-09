@@ -37,7 +37,7 @@ const Question = () => {
   const navigate = useNavigate()
   const handleAnswer = (click: React.MouseEvent) => {
     //first store the answ.
-    dispatch(setAnswer({index: currentIdx, answer: (click.target as HTMLElement).id}))
+    dispatch(setAnswer({index: currentIdx, answer: (click.target as HTMLElement).innerText}))
     //then paginate to the next one or go results
     currentIdx < 9 ? dispatch(setCurrentIndex(currentIdx + 1)) : navigate("/result/")
   }

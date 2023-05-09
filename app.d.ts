@@ -10,8 +10,13 @@ interface Questions {
   "response_code":number,
   "results":QuestionResult[]
 }
+interface BtnProp {
+  content: string,
+  onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void,
+}
 
 export {
   QuestionResult,
-  Questions
+  Questions,
+  BtnProp
 }

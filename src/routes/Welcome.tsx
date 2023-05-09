@@ -1,6 +1,6 @@
-import { useNavigate } from "react-router-dom"
+import PlayBtn from "../components/buttons/PlayBtn"
 
-import { VscDebugStart } from "react-icons/vsc"
+import { useNavigate } from "react-router-dom"
 
 const Welcome = () => {
 
@@ -19,7 +19,7 @@ const Welcome = () => {
       </h1>
       <p className="w-3/4 md:w-full leading-relaxed text-lg font-bold text-slate-600/70 dark:text-purple-300/70 cursor-default">You will be presented with 10 True or False questions</p>
       <p className="leading-relaxed text-lg font-bold text-slate-600/70 dark:text-purple-300/70 cursor-default">Can you score 100%?</p>
-      <button className="btn-wlc [&>*]:hover:animate-ping" onClick={() => navigate("/question/")}><VscDebugStart className=""/>begin</button>
+      <PlayBtn content="begin" onClick={() => navigate("/question/")} />
     </main>
   )
 }
