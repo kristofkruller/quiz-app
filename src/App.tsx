@@ -5,6 +5,7 @@ import Welcome from "./routes/Welcome"
 import Result from "./routes/Result"
 
 import ThemeLayout from "./components/ThemeLayout"
+import NotFound from "./assets/NotFound"
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Welcome />} />
         <Route path="/question/" element={<Question />} />
         <Route path="/result/" element={<Result />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </ThemeLayout>
   )

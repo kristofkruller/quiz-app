@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { IoMdCloudyNight } from "react-icons/io"
 import { GiStripedSun } from "react-icons/gi"
 
-import { useGetQuestionsQuery } from "../../store/api/questionsApiSlice";
+import { useGetQuestionsQuery } from "../../store/slices/questionsApiSlice";
 
 const DarkModeButton = () => {
 

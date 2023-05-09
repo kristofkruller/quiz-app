@@ -17,3 +17,6 @@ export const questionsApiSlice = createApi({
   })
 })
 export const { useGetQuestionsQuery } = questionsApiSlice;
+
+//as reducer
+export default questionsApiSlice;

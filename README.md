@@ -39,4 +39,5 @@ logged in [/question] slug - `persist store` for answers
 - [root/app.d.ts] for interfaces  
 - `he` lib for html decoding
 - `react-icons` to provide iconset / SVGs
+- `persist` for putting stato to LS
 

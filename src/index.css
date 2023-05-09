@@ -79,9 +79,12 @@ body.dark {
 
 @layer components {
   .btn-wlc{
-    @apply relative flex flex-row items-center justify-center gap-x-1 hover:gap-x-3 py-2.5 px-6 rounded-[6.25rem] shadow-sm hover:shadow-md font-medium bg-slate-900 hover:bg-slate-900/50 text-pink-400 hover:text-gray-300 uppercase dark:bg-pink-200/10 dark:hover:bg-pink-200/20 dark:text-gray-200
+    @apply relative flex flex-row items-center justify-center gap-x-1 hover:gap-x-3 py-2.5 px-6 rounded-[6.25rem] shadow-sm hover:shadow-md font-medium bg-slate-900/70 hover:bg-slate-900/50 text-purple-400 hover:text-gray-300 uppercase dark:bg-pink-200/10 dark:hover:bg-pink-200/20 dark:text-gray-200
   }
   .icon-basic {
     @apply w-10 h-10 fill-slate-600 dark:fill-purple-500
+  }
+  .wrapper {
+    @apply cursor-default flex flex-col items-center justify-around xl:w-1/2 lg:w-3/4 w-full mx-auto text-center h-full [&>*]:my-5 [&>*]:focus:outline-none
   }
 }

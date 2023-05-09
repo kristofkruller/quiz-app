@@ -9,8 +9,9 @@ export default {
   theme: {
     extend: {
       animation: {
-        cursor: 'cursor .6s linear infinite alternate',
         type: 'type 2.7s ease-out .8s infinite alternate both',
+        cursor: 'cursor .6s linear infinite alternate',
+        shade: 'shade 20s ease-in-out infinite alternate'
       },
       keyframes: {
         type: {
@@ -31,7 +32,14 @@ export default {
           "40%" : { opacity: 1 },
           "60%" : {},
           "100%" : { opacity: 0 }
-        },        
+        }, 
+        shade: {
+          "0%" : { opacity: .9 },
+          "25%" : { opacity: .35 },
+          "40%" : { opacity: .7 },
+          "60%" : { opacity: .45 },
+          "100%" : { opacity: .65 }
+        }       
       },
     },
   },
