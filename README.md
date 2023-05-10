@@ -2,7 +2,7 @@
 *rtkquery-redux-persist-router*
 ## **Project install n run** 💾  
 `npm i && npm run dev`  
-
+no .env or special req, only frontend app 🎨
 ## **Requirement specification** 🎂   
 ### Welcome:  
 - Static Text  
@@ -30,10 +30,10 @@ logged in [/question] slug - `persist store` for answers
 ### Tree🌲
 *`root`* .d.ts, .configs, npm, index classic stuff
 *src* app core files (4)
-*assets* helpers, loading, non reactive mid-front elements, functions
-*components* for structure handlers and classic ui components, sub foldered
+*assets* helpers, loading, non reactive mid-front elements, functions, info providers
+*components* for structure layouts, handlers and classic ui components, sub foldered
 *routes* pages
-*store* state store, redux, redux logic
+*store* redux state store, slices for different data, logic, store constructor, fetch, cache
 
 ## **Additional info**  
 - [root/app.d.ts] for interfaces  
@@ -41,3 +41,4 @@ logged in [/question] slug - `persist store` for answers
 - `react-icons` to provide iconset / SVGs
 - `persist` for putting stato to LS
 
+Upgrade perspective: auth, reg, login, difficulity set, question set, design ...
