@@ -12,7 +12,7 @@ export const questionsApiSlice = createApi({
     //GET(query)
     getQuestions: builder.query<QuestionResult[], void>({
       query: () => "/api.php?amount=10&difficulty=hard&type=boolean",
-      transformResponse: (response: Questions) => response.results
+      transformResponse: (response: Questions) => response.results,
     })
   })
 })

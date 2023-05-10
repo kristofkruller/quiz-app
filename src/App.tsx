@@ -1,20 +1,24 @@
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route, Navigate } from "react-router-dom"
 
 import Question from './routes/Question'
 import Welcome from "./routes/Welcome"
 import Result from "./routes/Result"
 
 import ThemeLayout from "./components/ThemeLayout"
-import NotFound from "./assets/NotFound"
+import RouteError from "./assets/RouteError"
+import RouteLayout from "./components/RouteLayout"
+import WrongUrl from "./assets/WrongUrl"
 
 function App() {
   return (
     <ThemeLayout>
       <Routes>
-        <Route path="/" element={<Welcome />} />
-        <Route path="/question/" element={<Question />} />
-        <Route path="/result/" element={<Result />} />
-        <Route path="*" element={<NotFound />} />
+        <Route element={<RouteLayout />} errorElement={<RouteError />}>
+          <Route index element={<Welcome />} />
+          <Route path="question" element={<Question />} />
+          <Route path="result" element={<Result />} />
+          <Route path="*" element={<WrongUrl />} />
+        </Route>
       </Routes>
     </ThemeLayout>
   )

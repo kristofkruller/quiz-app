@@ -24,6 +24,7 @@ const Question = () => {
     isSuccess,
     error,
   } = useGetQuestionsQuery()
+  const answ = useSelector((state: RootState)=> state.answers.answers)
 
   //STATES
   const currentIdx = useSelector((state: RootState) => state.currentIndex.currentIndex)
@@ -39,7 +40,21 @@ const Question = () => {
     //first store the answ.
     dispatch(setAnswer({index: currentIdx, answer: (click.target as HTMLElement).innerText}))
     //then paginate to the next one or go results
-    currentIdx < 9 ? dispatch(setCurrentIndex(currentIdx + 1)) : navigate("/result/")
+    currentIdx < 9 ? dispatch(setCurrentIndex(currentIdx + 1)) : compareAndProvide()
+  }
+
+  const compareAndProvide = () => {
+    const resultOfRun = []
+    if (questions) {
+      for (let idx = 0; answ.length > idx; idx++) {
+        let result = questions[idx].correct_answer
+        answ[idx] === result.toUpperCase() 
+        ? resultOfRun.push("Correct") 
+        : resultOfRun.push(`Incorrect answer, the correct would be ${result}`)
+        dispatch(setAnswer({index: idx, answer: resultOfRun[idx]}))
+      }
+    }
+    navigate("/result/")
   }
 
   //COMPONENT LOGIC
@@ -67,13 +82,10 @@ const Question = () => {
     cardContent = (
       <QuestionCard qData={currentQuestion}>
         <p className="text-slate-500 dark:text-purple-500 uppercase animate-shade mb-8">Question {currentIdx + 1} of 10</p>
-        { currentIdx < 10 ?
         <div id="cta" className="flex justify-around">
           <ActionBtn content="True" onClick={(event) => handleAnswer(event)} />
           <ActionBtn content="False" onClick={(event) => handleAnswer(event)} />
-        </div> :
-        <ActionBtn content="Results" onClick={() => navigate("/result/")} />
-        }
+        </div>
       </QuestionCard>
     )
   } 
