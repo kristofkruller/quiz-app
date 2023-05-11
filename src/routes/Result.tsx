@@ -16,7 +16,7 @@ const Result = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const answ = useSelector((state: RootState)=> state.answers.answers)
-  const correctOnes = answ.filter(answer => answer.includes("Correct"))
+  const correctOnes = answ.filter(answer => answer.includes("Well"))
 
   const { data: questions, refetch } = useGetQuestionsQuery()
 
