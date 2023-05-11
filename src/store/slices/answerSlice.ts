@@ -1,8 +1,8 @@
+//REDUX
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface AnswerState {
-    answers: string[];
-}
+//IF
+import { AnswerState } from "../../../app";
 
 const initialState: AnswerState = {
     answers: Array(10).fill(''), // represent the 10 answ.

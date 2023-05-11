@@ -1,8 +1,7 @@
 import DarkModeButton from "./buttons/DarkModeBtn"
 
-interface ThemeLayoutProps {
-  children: React.ReactNode;
-}
+//IF
+import { ThemeLayoutProps } from "../../app"
 
 const ThemeLayout = ({ children }: ThemeLayoutProps) => {
   return (

@@ -1,13 +1,13 @@
 import { useState } from "react"
 
+//DECODE
 import he from "he"
 
-interface contentProps {
-    question: string,
-    answ: string
-}
+//IF
+import { ResultContentProps } from "../../app"
 
-const ResultContent = ({question, answ}: contentProps) => {
+const ResultContent = ({question, answ}: ResultContentProps) => {
+    //States, helpers, functionality
     const [over, isOver] = useState(false)
     const [pos, setPos] = useState({
         top: "",
@@ -15,7 +15,7 @@ const ResultContent = ({question, answ}: contentProps) => {
     })
     const setPopUp = (event: any) => {
         isOver(true)
-
+        console.log()
         if(event && window.innerWidth > 768) {
             const rect = event.target.getBoundingClientRect()
             setPos({
@@ -39,10 +39,13 @@ const ResultContent = ({question, answ}: contentProps) => {
             onTouchStart={(event) => setPopUp(event)} onTouchEnd={() => hidePopUp()}>
                 {he.decode(question)}
             </span>
-            <section className={`absolute`} style={{ left: pos.left, top: pos.top, transform: `${window.innerWidth > 768 ? "translate(200%, calc(-50% - 40px))" : "translateY(-50%)"}` }}>
+
+            <section className={`absolute`} 
+                style={{ left: pos.left, top: pos.top, transform: `${window.innerWidth > 768 ? "translate(200%, calc(-50% - 40px))" : "translateY(-50%)"}` }}>
+
                 <div className={`${over ? "opacity-1 inline-block" : "opacity-0 hidden"} talk-bubble tri-right border round btm-left-in`}>
                     <div className="talktext text-xs">
-                        <p>{answ}</p>
+                        <p>{Boolean(answ) ? answ : "Please answer this question, or hit the play again button"}</p>
                     </div>
                 </div>
             </section>

@@ -1,9 +1,12 @@
-import { Routes, Route, Navigate } from "react-router-dom"
+//ROUTER
+import { Routes, Route } from "react-router-dom"
 
+//PAGES
 import Question from './routes/Question'
 import Welcome from "./routes/Welcome"
 import Result from "./routes/Result"
 
+//LAYOUTS N ASSETS
 import ThemeLayout from "./components/ThemeLayout"
 import RouteError from "./assets/RouteError"
 import RouteLayout from "./components/RouteLayout"

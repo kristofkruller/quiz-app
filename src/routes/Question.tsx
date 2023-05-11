@@ -49,7 +49,7 @@ const Question = () => {
       for (let idx = 0; answ.length > idx; idx++) {
         let result = questions[idx].correct_answer
         answ[idx] === result.toUpperCase() 
-        ? resultOfRun.push("Correct") 
+        ? resultOfRun.push(`Well done, your answer ${result} was correct`) 
         : resultOfRun.push(`Incorrect answer, the correct would be ${result}`)
         dispatch(setAnswer({index: idx, answer: resultOfRun[idx]}))
       }

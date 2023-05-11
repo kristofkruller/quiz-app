@@ -1,8 +1,8 @@
+//REDUX
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface CurrentIndexState {
-  currentIndex: number;
-}
+//IF
+import { CurrentIndexState } from '../../../app';
 
 const initialState: CurrentIndexState = {
   currentIndex: 0

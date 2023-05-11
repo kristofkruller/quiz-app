@@ -84,6 +84,15 @@ body.dark {
   .wrapper {
     @apply cursor-default flex flex-col items-center justify-around xl:w-1/2 lg:w-3/4 w-full mx-auto text-center h-full [&>*]:my-5 [&>*]:focus:outline-none
   }
+  .play-button {
+	@apply relative shadow-lg shadow-gray-100/50 inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-neutral-50 transition duration-300 ease-out border-2 rounded-lg shadow-md
+  }
+  .play-button-body {
+	@apply absolute inset-0 flex items-center justify-center w-full h-full text-neutral-50 duration-300 -translate-x-full bg-gradient-to-r
+  }
+  .play-button-text {
+	@apply absolute shadow-lg dark:shadow-lg shadow-gray-100/50 items-center justify-center w-full h-full text-center
+  }
 }
 
 /*COMPONENTS*/

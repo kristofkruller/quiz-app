@@ -28,7 +28,6 @@ const Result = () => {
     refetch()
     navigate("/question/")
   };
-
   
   return (
     <section className="wrapper shadow-lg shadow-indigo-800/20 dark:shadow-indigo-500/50 p-5 rounded-lg w-full md:w-3/4">
@@ -40,10 +39,9 @@ const Result = () => {
       <div className="flex flex-col gap-2">
         {questions?.map((question, index) => ( 
           <ol key={index} className="flex gap-2 list-inside list space-y-1">
-            {answ[index] === "Correct" 
+            {answ[index].includes("Well")
             ? <CiCircleCheck className="min-w-[2rem] min-h-[2rem] stroke-[0.05rem] stroke-purple-800/70 hover:stroke-purple-700/60" /> 
             : <IoIosCloseCircleOutline className="min-w-[2rem] min-h-[2rem] stroke-[0.5rem] stroke-gray-800/70 fill-gray-800/70 hoverstroke-gray-700/60 hover:fill-gray-700/60 dark:stroke-gray-200/70 dark:fill-gray-200/70" />}
-            {/* <span key={index} className="font-bold text-sm md:text-md text-purple-800/70 dark:text-purple-200 p-1">{index + 1}.</span> */}
             <ResultContent question={question.question} answ={answ[index]}/>
           </ol>
         ))}

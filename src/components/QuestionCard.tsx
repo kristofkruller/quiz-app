@@ -1,17 +1,13 @@
-
-import { QuestionResult } from "../../app"
-
+//DECODE
 import he from "he"
 
+//ICONS
 import { ImQuestion } from "react-icons/im"
 
-interface CardProp {
-  qData: QuestionResult | undefined,
-  children: React.ReactNode
-}
+//IF
+import { QuestionCardProp } from "../../app"
 
-const QuestionCard = ({ qData, children }: CardProp) => {
-
+const QuestionCard = ({ qData, children }: QuestionCardProp) => {
   return (
   <> { qData && (
     <section className="wrapper">

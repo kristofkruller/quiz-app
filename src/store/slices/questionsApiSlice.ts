@@ -1,4 +1,7 @@
+//REDUX
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
+
+//IF
 import { QuestionResult, Questions } from "../../../app";
 
 export const questionsApiSlice = createApi({
