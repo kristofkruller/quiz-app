@@ -1,8 +1,20 @@
 # **REACT-TS-TAIL quiz app** ⚛  
 *rtkquery-redux-persist-router*
 ## **Project install n run** 💾  
+**classical run:**
 `npm i && npm run dev`  
 no .env or special req, only frontend app 🎨
+
+**docker run:**
+`docker build -t quiz-app-client .`
+`docker run -e WATCHPACK_POLLING=true -v $(pwd)/src:/client:ro -d -p 3050:3050 --name quiz-app quiz-app-client`
+
+*helpers*
+images `docker image ls`
+list of running containers `docker ps`
+kill container `docker rm quiz-app -f`
+interact with container `docker exec -it quiz-app bash`
+
 ## **Requirement specification** 🎂   
 ### Welcome:  
 - Static Text  
