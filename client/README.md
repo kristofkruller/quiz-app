@@ -6,12 +6,22 @@
 no .env or special req, only frontend app 🎨
 
 **docker run:**
+First install docker desktop for windows, and download NodeJs image (in the desktop app or from docker hub)!
+
+start image
 `docker build -t quiz-app-client .`
-`docker run -e WATCHPACK_POLLING=true -v $(pwd)/src -d -p 3050:3050 --name quiz-app quiz-app-client`
+
+full run
+`docker-compose -f docker-compose.yml -f docker-compose-dev.yml up -d --build`
+stop
+`docker-compose down`
+build
+`docker-compose up -d --build`
 
 *helpers*
 images `docker image ls`
 list of running containers `docker ps`
+kill image `docker image rm -f client-quiz-app-client`
 kill container `docker rm quiz-app -f`
 interact with container `docker exec -it quiz-app bash`
 

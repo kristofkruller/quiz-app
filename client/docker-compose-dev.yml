@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  quiz-app-client:
+    # stdin_open: true
+    # tty: true
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3050:3050"
+    volumes:
+      - ./src:/client/src
+    environment:
+      - WATCHPACK_POLLING=true

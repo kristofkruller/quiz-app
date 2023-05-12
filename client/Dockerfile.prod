@@ -1,0 +1,11 @@
+FROM node as dist
+WORKDIR /client
+COPY package.json .
+RUN npm install
+COPY . .
+# ARG ENV_VARIABLE
+# ENV ENV_VARIABLE=$ENV_VARIABLE
+RUN npm run build
+
+FROM nginx
+COPY --from=dist /app/dist /usr/share/nginx/html
