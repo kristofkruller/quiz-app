@@ -1,0 +1,14 @@
+services:
+  client:
+    image: quiz-app-client-prod-i
+    build: 
+      dockerfile: Dockerfile.prod
+    # args:
+      # - ENV_VARIABLE=thiswillbepassedtodockerfile.prod
+    container_name: quiz-app-client-prod
+    ports:
+      - "8080:80"
+    environment:
+      - NODE_ENV=production
+  # env_file:
+    # - ./.env
