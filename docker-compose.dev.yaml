@@ -1,0 +1,22 @@
+services:
+  client:
+    image: quiz-app-client-dev-i
+    build:
+      dockerfile: Dockerfile.dev
+      # args:
+        # - ENV_VARIABLE=thiswillbepassedtodockerfile.dev
+    container_name: quiz-app-client-dev
+    ports:
+      - "3050:3050"
+    environment:
+      - WATCHPACK_POLLING=true
+      - NODE_ENV=development
+    # env_file:
+    #   - ./.env
+    volumes:
+    # - <host directory>:<docker directory>
+      - ./client:/client
+      - node_modules:/client/node_modules/
+#if the container architecture is different than the host operating system that is used for development (i.e. macOs - Ubuntu) node_modules will cause a problem
+volumes:
+  node_modules:

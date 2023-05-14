@@ -1,4 +1,4 @@
-FROM node as dist
+FROM node as build
 WORKDIR /client
 COPY package.json .
 RUN npm install
@@ -8,4 +8,4 @@ COPY . .
 RUN npm run build
 
 FROM nginx
-COPY --from=dist /app/dist /usr/share/nginx/html
+COPY --from=build /client/build /usr/share/nginx/html

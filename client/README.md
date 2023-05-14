@@ -1,30 +1,37 @@
 # **REACT-TS-TAIL quiz app frontend** ⚛  
-*rtkquery-redux-persist-router*
+*rtkquery-redux-persist-router*  
 ## **Project install n run** 💾  
-**classical run:**
+CLI:  
+`git clone https://github.com/kristofkruller/quiz-app.git`  
+`cd quiz-app`  
+  
+**classical run:**  
+CLI in sequence (first change dir then run the app)  
+`cd client`  
 `npm i && npm run dev`  
-no .env or special req, only frontend app 🎨
-
-**docker run:**
-First install docker desktop for windows, and download NodeJs image (in the desktop app or from docker hub)!
-
-start image
-`docker build -t quiz-app-client .`
-
-full run
-`docker-compose -f docker-compose.yml -f docker-compose-dev.yml up -d --build`
-stop
-`docker-compose down`
-build
-`docker-compose up -d --build`
-
-*helpers*
-images `docker image ls`
-list of running containers `docker ps`
-kill image `docker image rm -f client-quiz-app-client`
-kill container `docker rm quiz-app -f`
-interact with container `docker exec -it quiz-app bash`
-
+  
+no .env or special req, only frontend app 🎨  
+  
+**docker run:**  
+First install docker desktop [for windows or ?OS], run it, and download NodeJs (and nginx image - not needed for client side only) - in the desktop app or from docker hub! *if u r using linux i assume u dont need this guide*  
+  
+commanded by a [shell script] so use in CLI like:  
+  
+<./bin/deploy.sh><dev or prod><up or down>  
+so for example let's run the app in dev  
+`./bin/deploy.sh dev up`  
+if u r done just ctrl+c for killin the session like usually  
+  
+and let's say u r done and wanna clear the img and conti - just  
+`./bin/deploy.sh dev down`  
+  
+*misc info*  
+images `docker image ls`  
+list of running containers `docker ps`  
+kill image `docker image rm -f <app image name>`  
+kill container `docker rm <app container name> -f`  
+interact with container `docker exec -it <app container name> bash`  
+  
 ## **Requirement specification** 🎂   
 ### Welcome:  
 - Static Text  
@@ -49,18 +56,18 @@ logged in [/question] slug - `persist store` for answers
 `rtk query` for destuctured cache data  
 `onClick` driven mechanics  
 `Results` [/result] slug for summary, full list, play again with persist storage reset  
-### Tree🌲
-*`root`* .d.ts, .configs, npm, index classic stuff
-*src* app core files (4)
-*assets* helpers, loading, non reactive mid-front elements, functions, info providers
-*components* for structure layouts, handlers and classic ui components, sub foldered
-*routes* pages
-*store* redux state store, slices for different data, logic, store constructor, fetch, cache
-
+### Tree🌲  
+*`root`* .d.ts, .configs, npm, index classic stuff  
+*src* app core files (4)  
+*assets* helpers, loading, non reactive mid-front elements, functions, info providers  
+*components* for structure layouts, handlers and classic ui components, sub foldered  
+*routes* pages  
+*store* redux state store, slices for different data, logic, store constructor, fetch, cache  
+  
 ## **Additional info**  
 - [root/app.d.ts] for interfaces  
-- `he` lib for html decoding
-- `react-icons` to provide iconset / SVGs
-- `persist` for putting stato to LS
-
-Upgrade perspective: auth, reg, login, difficulity set, question set, design ...
+- `he` lib for html decoding  
+- `react-icons` to provide iconset / SVGs  
+- `persist` for putting stato to LS  
+  
+Upgrade perspective: auth, reg, login, setters via dynamic fetch: (${difficulity}, ${questionNum}, ...), design ...  

@@ -6,9 +6,12 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host:true,
-    port: 3050, //docker spec
+    port: 3050, //docker spec!
     watch: {
       usePolling: true
     },
+  },
+  build: {
+    outDir: "build", //override original "dist" folder
   }
 })
