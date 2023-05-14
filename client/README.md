@@ -17,7 +17,7 @@ First install docker desktop [for windows or ?OS], run it, and download NodeJs (
   
 commanded by a [shell script] so use in CLI like:  
   
-<./bin/deploy.sh><dev or prod><up or down>  
+<"./bin/deploy.sh"><"dev or prod"><"up or down">  
 so for example let's run the app in dev  
 `./bin/deploy.sh dev up`  
 if u r done just ctrl+c for killin the session like usually  

@@ -10,9 +10,9 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --y: #6156f544;
-  --s: #050d184b;
-  --p: #a955f74d;
+  --y: #6156f5ae;
+  --s: #31807578;
+  --p: #3a91aab0;
 }
 ::-webkit-scrollbar-track {
   background-color: transparent;
@@ -85,13 +85,13 @@ body.dark {
     @apply cursor-default flex flex-col items-center justify-around xl:w-1/2 lg:w-3/4 w-full mx-auto text-center h-full [&>*]:my-5 [&>*]:focus:outline-none
   }
   .play-button {
-	@apply relative shadow-lg shadow-gray-100/50 inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-neutral-50 transition duration-300 ease-out border-2 rounded-lg shadow-md
+	  @apply relative shadow-lg inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-neutral-50 transition duration-300 ease-out border-2 rounded-lg shadow-md
   }
   .play-button-body {
-	@apply absolute inset-0 flex items-center justify-center w-full h-full text-neutral-50 duration-300 -translate-x-full bg-gradient-to-r
+	  @apply absolute inset-0 flex items-center justify-center w-full h-full text-neutral-50 duration-300 -translate-x-full bg-gradient-to-r
   }
   .play-button-text {
-	@apply absolute shadow-lg dark:shadow-lg shadow-gray-100/50 items-center justify-center w-full h-full text-center
+	  @apply absolute shadow-lg dark:shadow-lg shadow-gray-100/50 items-center justify-center w-full h-full text-center
   }
 }
 
